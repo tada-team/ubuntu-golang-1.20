@@ -7,6 +7,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
         apt-utils \
         curl \
         gnupg \
+        libreoffice-writer \
         software-properties-common \
         tzdata \
     && add-apt-repository -y ppa:longsleep/golang-backports \
