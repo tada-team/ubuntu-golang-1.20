@@ -21,6 +21,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
         golang-1.16-go \
         golang-go \
         golang-golang-x-tools \
+    && apt-get autoremove -y \
     && apt-get remove -y \
         apt-utils \
         software-properties-common \
