@@ -21,8 +21,9 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
         golang-golang-x-tools \
     && apt-get remove -y \
         apt-utils \
-        software-properties-common \
-    && go get \
+        software-properties-common
+        
+RUN go get \
         github.com/axw/gocov/gocov \
         github.com/jstemmer/go-junit-report \
         github.com/matm/gocov-html \
