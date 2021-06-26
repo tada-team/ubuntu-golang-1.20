@@ -4,15 +4,17 @@ ENV GOPATH=/gocode
 ENV PATH=$PATH:$GOPATH/bin
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-        apt-utils \
         curl \
         ffmpeg \
         gnupg \
+        libreoffice-writer \
         libavcodec-extra \
         libmp3lame-dev \
-        libreoffice-writer \
+        tzdata
+        
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        apt-utils \
         software-properties-common \
-        tzdata \
     && add-apt-repository -y ppa:longsleep/golang-backports \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -21,9 +23,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
         golang-golang-x-tools \
     && apt-get remove -y \
         apt-utils \
-        software-properties-common
-        
-RUN go get \
+        software-properties-common \
+    && go get \
         github.com/axw/gocov/gocov \
         github.com/jstemmer/go-junit-report \
         github.com/matm/gocov-html \
