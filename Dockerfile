@@ -6,6 +6,7 @@ ENV PATH=$PATH:$GOPATH/bin
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         apt-utils \
         curl \
+        ffmpeg \
         gnupg \
         libreoffice-writer \
         software-properties-common \
