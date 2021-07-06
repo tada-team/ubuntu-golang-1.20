@@ -44,9 +44,9 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
         gnupg \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        td-janus=0.10.10-2 \
-        td-libnice-dev=0.1.16-2 \
-        td-libsrtp-dev=2.3.0-2 \
-        td-libvips-dev=8.10.5-4 \
-        td-libwebsockets-dev=3.2.2-1 \
+        td-janus=0.10.9+2 \
+        td-libnice-dev=0.1.16 \
+        td-libsrtp-dev=2.3.0 \
+        td-libvips-dev=8.10.5 \
+        td-libwebsockets-dev=3.2.2-1
     && apt-get autoremove -y
