@@ -48,5 +48,5 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
         td-libnice-dev=0.1.16 \
         td-libsrtp-dev=2.3.0 \
         td-libvips-dev=8.10.5 \
-        td-libwebsockets-dev=3.2.2-1
+        td-libwebsockets-dev=3.2.2-1 \
     && apt-get autoremove -y
