@@ -45,7 +45,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
         gnupg \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        td-janus=0.10.9-3 \
+        td-janus=0.10.10-3 \
         td-libnice-dev=0.1.16-2 \
         td-libsrtp-dev=2.3.0-2 \
         td-libvips-dev=8.10.5-4 \
