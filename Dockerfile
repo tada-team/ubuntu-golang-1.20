@@ -17,12 +17,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
     && apt-get remove -y \
         apt-utils \
         software-properties-common \
-    && go get \
-        github.com/axw/gocov/gocov \
-        github.com/go-delve/delve/cmd/dlv \
-        github.com/jstemmer/go-junit-report \
-        github.com/matm/gocov-html \
-        github.com/t-yuki/gocover-cobertura
+    && go get github.com/go-delve/delve/cmd/dlv
 
 # tools
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
