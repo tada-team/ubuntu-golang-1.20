@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM docker.io/ubuntu:focal
 
 ENV GOPATH=/gocode
 ENV PATH=$PATH:$GOPATH/bin
@@ -7,6 +7,8 @@ ENV PATH=$PATH:$GOPATH/bin
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         apt-utils \
         software-properties-common \
+	gcc \
+        libc-dev \
     && add-apt-repository -y ppa:longsleep/golang-backports \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
