@@ -1,4 +1,4 @@
-FROM docker.io/ubuntu:focal
+FROM docker.io/ubuntu:20.04
 
 ENV GOPATH=/gocode
 ENV PATH=$PATH:$GOPATH/bin
@@ -40,9 +40,6 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
         gnupg \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        td-janus=0.10.10-3 \
-        td-libnice-dev=0.1.16-2 \
-        td-libsrtp-dev=2.3.0-2 \
-        td-libvips-dev=8.10.5-4 \
-        td-libwebsockets-dev=3.2.2-1 \
+        td-janus=0.10.10-4 \
+        td-libvips-dev=8.10.6-1 \
     && apt-get autoremove -y
