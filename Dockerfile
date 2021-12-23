@@ -40,6 +40,6 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
         gnupg \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        td-janus=0.10.10-4 \
+        td-janus=0.10.10-5 \
         td-libvips-dev=8.10.6-1 \
     && apt-get autoremove -y
