@@ -18,7 +18,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
     && apt-get remove -y \
         apt-utils \
         software-properties-common \
-    && go get github.com/go-delve/delve/cmd/dlv
+    && go install github.com/go-delve/delve/cmd/dlv@latest
 
 # tools
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
