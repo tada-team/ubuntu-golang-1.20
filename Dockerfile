@@ -2,6 +2,7 @@ FROM docker.io/ubuntu:20.04
 
 ENV GOPATH=/gocode
 ENV PATH=$PATH:$GOPATH/bin
+ENV GOVERSION=1.20
 
 # golang
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
@@ -12,13 +13,15 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
     && add-apt-repository -y ppa:longsleep/golang-backports \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        golang-1.20-go \
+        golang-$GOVERSION-go \
         golang-golang-x-tools \
     && apt-get autoremove -y \
     && apt-get remove -y \
         apt-utils \
         software-properties-common 
-    
+	
+# Create symbolic link
+RUN ln -s /usr/lib/go-$GOVERSION /gocode
 
 # tools
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
